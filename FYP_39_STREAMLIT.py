@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import folium
 import matplotlib.pyplot as plt
-from folium.plugins import HeatMap
-
 import seaborn as sns
 
 df_data= pd.read_csv('df_data.csv')
