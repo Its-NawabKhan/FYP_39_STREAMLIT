@@ -32,12 +32,12 @@ df_diff_small = df_diff.tail(7)
 
 @st.cache(persist=True, suppress_st_warning=True)
 
-def main():
-    st.header("Shifa International Hospital")
-    st.subheader("Trends that you need to know")
-    st.image("image.jpg",width=1000)
+# def main():
+st.header("Shifa International Hospital")
+st.subheader("Trends that you need to know")
+st.image("image.jpg",width=1000)
 # if __name__ == "__main__":
-main()
+# main()
 
 radio_val= st.radio("Average Wait Times",['Parking Entry Wait','Kiosk Wait','Department Entrance Wait','Department Exit Wait','Parking Exit Wait','Departure Wait'],index=1)
 if radio_val== 'Parking Entry Wait':
