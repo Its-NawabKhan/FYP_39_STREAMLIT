@@ -42,12 +42,12 @@ if __name__ == "__main__":
 radio_val= st.radio("Graph",['pie chart','bar graph','box plot'],index=1)
 if radio_val== 'pie chart':
     fig = plt.figure()
-    sns.lineplot(df_diff_small['kiosk_wait'],df_diff_small['Date'])
+    sns.lineplot(df_diff_small['Date'], df_diff_small['kiosk_wait'])
     st.pyplot(fig)
 
 elif radio_val== 'bar graph':
     fig = plt.figure()
-    sns.lineplot([df_diff_small['Date'],df_diff_small['kiosk_wait']])
+    sns.barplot(df_diff_small['Date'], df_diff_small['kiosk_wait'])
     st.pyplot(fig)
 else:
     st.write(df_aggreg.head(10))
