@@ -30,7 +30,7 @@ df_diff.reset_index(inplace=True)
 
 df_diff_small = df_diff.tail(7)
 
-# @st.cache(persist=True, suppress_st_warning=True)
+@st.cache(persist=True, suppress_st_warning=True)
 
 # def main():
 st.image("logo.jpg", width = 100)
