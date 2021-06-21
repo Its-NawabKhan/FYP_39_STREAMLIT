@@ -42,10 +42,8 @@ if radio_val== 'pie chart':
     st.write(df_data.head(5))
 
 elif radio_val== 'bar graph':
-    x=['a','b','c']
-    vals=[10,5,15]
     fig = plt.figure()
-    sns.barplot(x,vals)
+    sns.barplot(df_diff['Date'],df_diff['kiosk_wait'])
     st.pyplot(fig)
 else:
     st.write(df_data.head(15))
