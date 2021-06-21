@@ -35,8 +35,19 @@ df_diff_small = df_diff.tail(7)
 # def main():
 st.header("Shifa International Hospital")
 st.subheader("Trends that you need to know")
-# st.image("logo.jpg")
-st.image("img2.jpg",use_column_width='always')
+st.image("logo.jpg")
+# st.image("img2.jpg",use_column_width='always')
+
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://scontent.fisb1-2.fna.fbcdn.net/v/t31.18172-8/616201_345530125522810_1582305693_o.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=pAO8AHzSVdkAX8aiSPT&_nc_ht=scontent.fisb1-2.fna&oh=397619bf1bbea258a98f8661903feae1&oe=60F53966");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # if __name__ == "__main__":
 # main()
