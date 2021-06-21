@@ -36,31 +36,31 @@ def main():
     st.header("Shifa International Hospital")
     st.subheader("Trends that you need to know")
     st.image("image.jpg",width=1000)
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+main()
 
-radio_val= st.radio("Average Wait Times Vs Rating",['Parking Entry Wait VS Rating','Kiosk Wait VS Rating','Department Entrance Wait VS Rating','Department Exit Wait VS Rating','Parking Exit Wait VS Rating','Departure Wait VS Rating'],index=1)
-if radio_val== 'Parking Entry Wait VS Rating':
+radio_val= st.radio("Average Wait Times",['Parking Entry Wait','Kiosk Wait','Department Entrance Wait','Department Exit Wait','Parking Exit Wait','Departure Wait'],index=1)
+if radio_val== 'Parking Entry Wait':
     fig = plt.figure()
     sns.barplot(df_diff_small['Date'], df_diff_small['parking_entry_wait'])
     st.pyplot(fig)
 
-elif radio_val== 'Kiosk Wait VS Rating':
+elif radio_val== 'Kiosk Wait':
     fig = plt.figure()
     sns.barplot(df_diff_small['Date'], df_diff_small['kiosk_wait'])
     st.pyplot(fig)
 
-elif radio_val== 'Department Entrance Wait VS Rating':
+elif radio_val== 'Department Entrance Wait':
     fig = plt.figure()
     sns.barplot(df_diff_small['Date'], df_diff_small['department_entrance_wait'])
     st.pyplot(fig)
 
-elif radio_val== 'Department Exit Wait VS Rating':
+elif radio_val== 'Department Exit Wait':
     fig = plt.figure()
     sns.barplot(df_diff_small['Date'], df_diff_small['department_exit_wait'])
     st.pyplot(fig)
 
-elif radio_val== 'Parking Exit Wait VS Rating':
+elif radio_val== 'Parking Exit Wait':
     fig = plt.figure()
     sns.barplot(df_diff_small['Date'], df_diff_small['parking_exit_wait'])
     st.pyplot(fig)
