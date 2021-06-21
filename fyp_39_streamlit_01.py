@@ -28,7 +28,7 @@ df_diff.sort_values('Date', ascending=True, inplace=True)
 df_diff.set_index('Date', inplace=True)
 df_diff.reset_index(inplace=True)
 
-df_diff_small = df_diff.tail(4)
+df_diff_small = df_diff.tail(7)
 
 @st.cache(persist=True, suppress_st_warning=True)
 
