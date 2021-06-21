@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df_data= pd.read_csv('D:/backup/Work_Extra/nawabkhan_fyp/time_generated.csv')
+df_data= pd.read_csv('df_data.csv')
 # Get the data from url and request it as json file
 
 df_data01 = df_data.copy()
