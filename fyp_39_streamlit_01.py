@@ -24,7 +24,7 @@ df_diff['Date'] = df_aggreg['Date'].apply(lambda x: str(x).split('21-')[1])
 for each in df_diff.columns[0:-1]:
     df_diff[each] = df_aggreg[each] - means_dict[each]
 
-df_diff.sort_values('Date', ascending=False, inplace=True)
+df_diff.sort_values('Date', ascending=True, inplace=True)
 df_diff.set_index('Date', inplace=True)
 df_diff.reset_index(inplace=True)
 
