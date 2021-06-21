@@ -35,7 +35,9 @@ df_diff_small = df_diff.tail(7)
 # def main():
 st.header("Shifa International Hospital")
 st.subheader("Trends that you need to know")
-st.image("image.jpg",width=1000)
+st.image("logo.jpg",width=None)
+st.image("img2.jpg",use_column_width='always')
+
 # if __name__ == "__main__":
 # main()
 
