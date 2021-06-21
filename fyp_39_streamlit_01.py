@@ -22,11 +22,13 @@ df_diff = pd.DataFrame(columns=df_data01.columns)
 df_diff['Date'] = df_aggreg['Date'].apply(lambda x: str(x).split('21-')[1])
 
 for each in df_diff.columns[0:-1]:
-    df_diff[each] = df_aggreg[each] - means_dict[each]
+    df_diff[each] = means_dict[each]-df_aggreg[each]
 
 df_diff.sort_values('Date', ascending=True, inplace=True)
 df_diff.set_index('Date', inplace=True)
 df_diff.reset_index(inplace=True)
+
+df_diff_small = df_diff.tail(3)
 
 @st.cache(persist=True, suppress_st_warning=True)
 
@@ -43,7 +45,7 @@ if radio_val== 'pie chart':
 
 elif radio_val== 'bar graph':
     fig = plt.figure()
-    sns.barplot(df_diff['Date'],df_diff['kiosk_wait'])
+    sns.barplot(df_diff_small['Date'],df_diff_small['kiosk_wait'])
     st.pyplot(fig)
 else:
-    st.write(df_data.head(15))
+    st.write(df_aggreg.head(10))
