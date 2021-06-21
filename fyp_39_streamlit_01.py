@@ -19,7 +19,7 @@ df_aggreg = df_data01.groupby('Date',as_index=False).agg('mean')
 
 df_diff = pd.DataFrame(columns=df_data01.columns)
 
-df_diff['Date'] = df_aggreg['Date']
+df_diff['Date'] = df_aggreg['Date'].apply(lambda x: str(x).split('21-')[1])
 
 for each in df_diff.columns[0:-1]:
     df_diff[each] = df_aggreg[each] - means_dict[each]
@@ -42,10 +42,10 @@ if radio_val== 'pie chart':
     st.write(df_data.head(5))
 
 elif radio_val== 'bar graph':
-    # x=['a','b','c']
-    # vals=[10,5,15]
+    x=['a','b','c']
+    vals=[10,5,15]
     fig = plt.figure()
-    sns.barplot(df_diff['Date'],df_diff['kiosk_wait'])
+    sns.barplot(x,vals)
     st.pyplot(fig)
 else:
     st.write(df_data.head(15))
