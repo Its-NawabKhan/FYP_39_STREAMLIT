@@ -28,7 +28,7 @@ df_diff.sort_values('Date', ascending=True, inplace=True)
 df_diff.set_index('Date', inplace=True)
 df_diff.reset_index(inplace=True)
 
-df_diff_small = df_diff.tail(3)
+df_diff_small = df_diff.tail(4)
 
 @st.cache(persist=True, suppress_st_warning=True)
 
@@ -41,11 +41,13 @@ if __name__ == "__main__":
 
 radio_val= st.radio("Graph",['pie chart','bar graph','box plot'],index=1)
 if radio_val== 'pie chart':
-    st.write(df_data.head(5))
+    fig = plt.figure()
+    sns.lineplot(df_diff_small['kiosk_wait'],df_diff_small['Date'])
+    st.pyplot(fig)
 
 elif radio_val== 'bar graph':
     fig = plt.figure()
-    sns.barplot(df_diff_small['Date'],df_diff_small['kiosk_wait'])
+    sns.lineplot([df_diff_small['Date'],df_diff_small['kiosk_wait']])
     st.pyplot(fig)
 else:
     st.write(df_aggreg.head(10))
