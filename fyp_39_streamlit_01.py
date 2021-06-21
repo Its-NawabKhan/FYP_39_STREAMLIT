@@ -30,25 +30,14 @@ df_diff.reset_index(inplace=True)
 
 df_diff_small = df_diff.tail(7)
 
-@st.cache(persist=True, suppress_st_warning=True)
+# @st.cache(persist=True, suppress_st_warning=True)
 
 # def main():
-st.image("logo.jpg", width = 100)
+st.image("logo.jpg", width = 200)
 st.header("Shifa International Hospital")
 st.subheader("Trends that you need to know")
 
 # st.image("img2.jpg",use_column_width='always')
-
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/47/American_Eskimo_Dog.jpg");
-background-size: cover;
-}
-</style>
-'''
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # if __name__ == "__main__":
 # main()
