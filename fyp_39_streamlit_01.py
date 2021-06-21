@@ -39,15 +39,37 @@ def main():
 if __name__ == "__main__":
     main()
 
-radio_val= st.radio("Graph",['pie chart','bar graph','box plot'],index=1)
-if radio_val== 'pie chart':
+radio_val= st.radio("Average Wait Times Vs Rating",['Parking Entry Wait VS Rating','Parking Wait VS Rating','Department Entrance Wait VS Rating','Department Exit Wait VS Rating','Parking Exit Wait VS Rating','Departure Wait VS Rating'],index=1)
+if radio_val== 'Parking Wait VS Rating':
     fig = plt.figure()
-    sns.lineplot(df_diff_small['Date'], df_diff_small['kiosk_wait'])
+    sns.barplot(df_diff_small['Date'], df_diff_small['parking_entry_wait'])
     st.pyplot(fig)
 
 elif radio_val== 'bar graph':
     fig = plt.figure()
     sns.barplot(df_diff_small['Date'], df_diff_small['kiosk_wait'])
     st.pyplot(fig)
+
+elif radio_val== 'bar graph':
+    fig = plt.figure()
+    sns.barplot(df_diff_small['Date'], df_diff_small['department_entrance_wait'])
+    st.pyplot(fig)
+
+elif radio_val== 'bar graph':
+    fig = plt.figure()
+    sns.barplot(df_diff_small['Date'], df_diff_small['department_exit_wait'])
+    st.pyplot(fig)
+
+elif radio_val== 'bar graph':
+    fig = plt.figure()
+    sns.barplot(df_diff_small['Date'], df_diff_small['parking_exit_wait'])
+    st.pyplot(fig)
+
 else:
-    st.write(df_aggreg.head(10))
+    fig = plt.figure()
+    sns.barplot(df_diff_small['Date'], df_diff_small['departure_wait'])
+    st.pyplot(fig)
+
+fig1 = plt.figure()
+sns.barplot(df_diff_small['Date'], df_diff_small['Rating'])
+st.pyplot(fig1)
