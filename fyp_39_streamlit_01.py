@@ -9,7 +9,7 @@ df_data= pd.read_csv('df_data.csv')
 df_data01 = df_data.copy()
 
 df_data01.drop(columns=['Unnamed: 0', 'arrival', 'parking_entry', 'kiosk',
-       'department_entrance', 'department_exit', 'parking_exit', 'departure'], inplace=True)
+       'department_entrance', 'department_exit', 'parking_exit', 'departure','parking_entry_wait_wgt','kiosk_wait_wgt','department_entrance_wait_wgt','department_exit_wait_wgt','parking_exit_wait_wgt','departure_wait_wgt'], inplace=True)
 
 means_dict = {}
 for each in df_data01.columns[0:-1]:
