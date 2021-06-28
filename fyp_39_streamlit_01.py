@@ -8,8 +8,8 @@ df_data= pd.read_csv('df_data.csv')
 
 df_data01 = df_data.copy()
 
-df_data01.drop(columns=['Unnamed: 0', 'arrival', 'parking_entry', 'kiosk',
-       'department_entrance', 'department_exit', 'parking_exit', 'departure'], inplace=True)
+# df_data01.drop(columns=['Unnamed: 0', 'arrival', 'parking_entry', 'kiosk',
+#        'department_entrance', 'department_exit', 'parking_exit', 'departure'], inplace=True)
 
 means_dict = {}
 for each in df_data01.columns[0:-1]:
